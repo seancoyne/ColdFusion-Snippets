@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="true" extension="cfm">
+<name>FarCry Type</name>
+<help>Creates an empty FarCry custom type</help>
+<starttext><![CDATA[<cfcomponent output="false" extends="farcry.core.packages.types.$${Extends:types|versions}" displayname="$${Display Name}" hint="$${Hint}" bFriendly="$${Friendly URLs?:true|false}" bObjectBroker="$${Object Broker?:true|false}">
+]]></starttext>
+<endtext><![CDATA[
+</cfcomponent>]]></endtext>
+</snippet>

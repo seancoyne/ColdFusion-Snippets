@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="true" extension="cfm">
+<name>FarCry Rule</name>
+<help>Creates a blank farcry rule</help>
+<starttext><![CDATA[<cfcomponent output="false" extends="farcry.core.packages.rules.rules" displayname="$${Display Name}" hint="$${Hint}">
+]]></starttext>
+<endtext><![CDATA[
+</cfcomponent>]]></endtext>
+</snippet>

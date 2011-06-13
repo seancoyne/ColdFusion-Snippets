@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="false" extension="">
+<name>CFArgument</name>
+<help>Inserts a cfargument tag</help>
+<starttext><![CDATA[<cfargument name="$${Name}" type="$${Type}" required="$${required:true|false}" default="$${default}" hint="$${hint}" />]]></starttext>
+<endtext><![CDATA[]]></endtext>
+</snippet>

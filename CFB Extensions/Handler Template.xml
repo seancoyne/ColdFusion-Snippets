@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="false" extension="">
+<name>Handler Template</name>
+<help></help>
+<starttext><![CDATA[<cfsetting enablecfoutputonly="true" showdebugoutput="false" />
+
+<cfoutput>
+
+	<form action="#application.oCustomFunctions.getCurrentUrl()#" method="post">
+		
+		
+		
+		<input type="hidden" name="bHandleForm" value="1" />	
+		<input type="hidden" name="ideEventInfo" value="#form.ideEventInfo#" />
+		<button type="submit">Submit</button>
+			
+		
+	</form>
+	
+</cfoutput>
+
+<cfsetting enablecfoutputonly="false" />]]></starttext>
+<endtext><![CDATA[]]></endtext>
+</snippet>

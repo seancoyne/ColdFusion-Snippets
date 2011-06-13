@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="false" extension="cfm">
+<name>FarCry BuildLink Tag</name>
+<help>Inserts a skin:buildlink tag</help>
+<starttext><![CDATA[<skin:buildLink objectid="$${Object ID}">$${Text}</skin:buildLink>]]></starttext>
+<endtext><![CDATA[]]></endtext>
+</snippet>

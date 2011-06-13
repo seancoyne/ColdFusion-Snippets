@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="true" extension="cfm">
+<name>FarCry Webskin</name>
+<help>Creates a new FarCry webskin file</help>
+<starttext><![CDATA[<cfsetting enablecfoutputonly="true" />
+<!--- @@displayname: $${displayname} --->
+<!--- @@author: $${author:Sean Coyne (sean@n42designs.com)} --->
+
+<cfimport taglib="/farcry/core/tags/webskin" prefix="skin" />
+
+]]></starttext>
+<endtext><![CDATA[
+<cfsetting enablecfoutputonly="false" />]]></endtext>
+</snippet>
