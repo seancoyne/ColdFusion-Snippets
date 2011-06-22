@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="false" extension="">
+<name>Application CFC</name>
+<help></help>
+<starttext><![CDATA[<cfcomponent output="false">
+	
+	<cfset this.name = "$${application name}" />
+	<cfset this.applicationTimeout = createTimeSpan(0,2,0,0) />
+	<cfset this.clientManagement = false />
+	<cfset this.clientStorage = "cookie" />
+	<cfset this.loginStorage = "session" />
+	<cfset this.sessionManagement = true />
+	<cfset this.sessionTimeout = createTimeSpan(0,0,20,0)>
+	<cfset this.setClientCookies = true />
+	<cfset this.setDomainCookies = true />
+	<cfset this.scriptProtect = "none" />
+	<cfset this.secureJSON = false />
+	<cfset this.secureJSONPrefix = "" />
+	<cfset this.welcomeFileList = "" />
+	<cfset this.mappings = structNew() />
+	<cfset this.customtagpaths = "" />
+	
+	<cffunction name="onApplicationStart" access="public" returnType="boolean" output="false">
+		<cfreturn true />
+	</cffunction>
+
+	<cffunction name="onApplicationEnd" access="public" returnType="void" output="false">
+		<cfargument name="applicationScope" required="true" />
+	</cffunction>
+
+	<!---
+	<cffunction name="onMissingTemplate" access="public" returnType="boolean" output="false">
+		<cfargument name="targetpage" required="true" type="string" />
+		<cfreturn true />
+	</cffunction>
+	--->
+	
+	<cffunction name="onRequestStart" access="public" returnType="boolean" output="false">
+		<cfargument name="thePage" type="string" required="true" />
+		<cfif structKeyExists(url,"init")>
+			<cflock scope="application" timeout="10">
+				<cfset onApplicationStart() />
+			</cflock>
+		</cfif>
+		<cfreturn true />
+	</cffunction>
+
+	<!---
+	<cffunction name="onRequest" access="public" returnType="void">
+		<cfargument name="thePage" type="string" required="true" />
+		<cfinclude template="#arguments.thePage#" />
+	</cffunction>
+	--->
+
+	<cffunction name="onRequestEnd" access="public" returnType="void" output="false">
+		<cfargument name="thePage" type="string" required="true" />
+	</cffunction>
+
+	<!---
+	<cffunction name="onError" access="public" returnType="void" output="false">
+		<cfargument name="exception" required="true">
+		<cfargument name="eventname" type="string" required="true">
+		<cfdump var="#arguments#"><cfabort>
+	</cffunction>
+	--->
+
+	<cffunction name="onSessionStart" access="public" returnType="void" output="false">
+	</cffunction>
+
+	<cffunction name="onSessionEnd" access="public" returnType="void" output="false">
+		<cfargument name="sessionScope" type="struct" required="true" />
+		<cfargument name="appScope" type="struct" required="false" />
+	</cffunction>
+
+</cfcomponent>]]></starttext>
+<endtext><![CDATA[]]></endtext>
+</snippet>
