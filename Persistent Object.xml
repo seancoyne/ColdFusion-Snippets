@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippet filetemplate="false" extension="">
+<name>Persistent Object</name>
+<help></help>
+<starttext><![CDATA[component persistent="true" {
+	property name="id" fieldtype="id" generator="identity";
+	property name="createddate" type="date" ormtype="timestamp" generated="insert" notnull="true";
+	property name="modifieddate" type="date" fieldtype="timestamp";
+	
+	public any function init() {
+		if(isNull(variables.createddate)) {
+			setCreatedDate(now());
+		}
+	}
+	
+	]]></starttext>
+<endtext><![CDATA[
+}]]></endtext>
+</snippet>
